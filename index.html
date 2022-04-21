@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>True Rate Tool Calculator</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-section">
+            <div class="title">Rate Calculator</div>
+
+            <div class="title-item">
+                <label for="avg-mile">Enter your average miles per gallon:</label>
+                <input type="number" name="avg-mile" id="avg-mile-per-gellon">
+
+            </div>
+
+            <div class="title-item">
+                <label for="gas-price">Enter current gas price:</label>
+                <input type="number" name="gas-price" id="current-gas-price">
+            </div>
+
+        </div>
+
+        <div class="tables">
+
+            <div class="left">
+
+                <table>
+                    <tr>
+                        <th>1st Trip</th>
+                        <th>Load #1</th>
+                        <th>Load #2</th>
+                    </tr>
+                    <tr>
+                        <td>Trip Miles</td>
+                        <td><input type="number" name="" id="ft-trim-1"></td>
+                        <td><input type="number" name="" id="ft-trim-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Dead Head / Pickup</td>
+                        <td><input type="number" name="" id="ft-dhp-1"></td>
+                        <td><input type="number" name="" id="ft-dhp-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Dead Head / Delivery</td>
+                        <td><input type="number" name="" id="ft-dhd-1"></td>
+                        <td><input type="number" name="" id="ft-dhd-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Miles</td>
+                        <td><input type="number" readonly name="" id="ft-tm-1"></td>
+                        <td><input type="number" readonly name="" id="ft-tm-2"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rate</td>
+                        <td><input type="number" name="" id="ft-r-1"></td>
+                        <td><input type="number" name="" id="ft-r-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td><input type="number" name="" id="ft-w-1"></td>
+                        <td><input type="number" name="" id="ft-w-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Reduction</td>
+                        <td><input type="number" readonly name="" id="ft-fr-1"></td>
+                        <td><input type="number" readonly name="" id="ft-fr-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Cost</td>
+                        <td><input type="number" readonly name="" id="ft-fc-1"></td>
+                        <td><input type="number" readonly name="" id="ft-fc-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Days</td>
+                        <td><input type="number" name="" id="ft-d-1"></td>
+                        <td><input type="number" name="" id="ft-d-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Rate Per Mile</td>
+                        <td><input type="number" readonly name="" id="ft-rpm-1"></td>
+                        <td><input type="number" readonly name="" id="ft-rpm-2"></td>
+                    </tr>
+                    <tr>
+                        <td>True RPM</td>
+                        <td><input type="number" readonly name="" id="ft-trpm-1"></td>
+                        <td><input type="number" readonly name="" id="ft-trpm-2"></td>
+                    </tr>
+                    <tr>
+                        <td>True Day Rate</td>
+                        <td><input type="number" readonly name="" id="ft-tdr-1"></td>
+                        <td><input type="number" readonly name="" id="ft-tdr-2"></td>
+                    </tr>
+                    <tr>
+                        <td>True Rate</td>
+                        <td><input type="number" readonly name="" id="ft-tr-1"></td>
+                        <td><input type="number" readonly name="" id="ft-tr-2"></td>
+                    </tr>
+
+
+
+                </table>
+
+            </div>
+
+            <div class="right">
+
+                <table>
+                    <tr>
+                        <th>Backhaul</th>
+                        <th>Load #1</th>
+                        <th>Load #2</th>
+                    </tr>
+                    <tr>
+                        <td>Trip Miles</td>
+                        <td><input type="number" name="" id="bh-trim-1"></td>
+                        <td><input type="number" name="" id="bh-trim-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Dead Head / Pickup</td>
+                        <td><input type="number" name="" id="bh-dhp-1"></td>
+                        <td><input type="number" name="" id="bh-dhp-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Dead Head / Delivery</td>
+                        <td><input type="number" name="" id="bh-dhd-1"></td>
+                        <td><input type="number" name="" id="bh-dhd-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Miles</td>
+                        <td><input type="number" name="" id="bh-tm-1"></td>
+                        <td><input type="number" name="" id="bh-tm-2"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rate</td>
+                        <td><input type="number" name="" id="bh-r-1"></td>
+                        <td><input type="number" name="" id="bh-r-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td><input type="number" name="" id="bh-w-1"></td>
+                        <td><input type="number" name="" id="bh-w-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Reduction</td>
+                        <td><input type="number" name="" id="bh-fr-1"></td>
+                        <td><input type="number" name="" id="bh-fr-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Cost</td>
+                        <td><input type="number" name="" id="bh-fc-1"></td>
+                        <td><input type="number" name="" id="bh-fc-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Days</td>
+                        <td><input type="number" name="" id="bh-d-1"></td>
+                        <td><input type="number" name="" id="bh-d-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Rate Per Mile</td>
+                        <td><input type="number" name="" id="bh-rpm-1"></td>
+                        <td><input type="number" name="" id="bh-rpm-2"></td>
+                    </tr>
+                    <tr>
+                        <td>True RPM</td>
+                        <td><input type="number" name="" id="bh-trpm-1"></td>
+                        <td><input type="number" name="" id="bh-trpm-2"></td>
+                    </tr>
+                    <tr>
+                        <td>True Day Rate</td>
+                        <td><input type="number" name="" id="bh-tdr-1"></td>
+                        <td><input type="number" name="" id="bh-tdr-2"></td>
+                    </tr>
+                    <tr>
+                        <td>True Rate</td>
+                        <td><input type="number" name="" id="bh-tr-1"></td>
+                        <td><input type="number" name="" id="bh-tr-2"></td>
+                    </tr>
+
+
+
+                </table>
+
+            </div>
+        </div>
+        <div class="table-bottom">
+            <table>
+                <tr>
+                    <th>Total Rate Per Mile</th>
+                    <th>Total Rate Per Day</th>
+                    <th>Total Rate</th>
+                </tr>
+                <tr>
+                    <td><input type="number" name="" id=""></td>
+                    <td><input type="number" name="" id=""></td>
+                    <td><input type="number" name="" id=""></td>
+                </tr>
+
+        </div>
+    </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            // Load 1
+
+            $('#ft-trim-1').on('input', function () {
+                var value1 = parseFloat($('#ft-trim-1').val());
+                $('#ft-tm-1').val(value1);
+            });
+
+
+
+            $('#ft-dhp-1').on('input', function () {
+                var value1 = parseFloat($('#ft-trim-1').val());
+                value2 = parseFloat($('#ft-dhp-1').val());
+                $('#ft-tm-1').val(value1 + value2);
+            });
+
+            $('#ft-dhd-1').on('input', function () {
+                var value1 = parseFloat($('#ft-trim-1').val());
+                var value2 = parseFloat($('#ft-dhp-1').val());
+                var value3 = parseFloat($('#ft-dhd-1').val());
+                $('#ft-tm-1').val(value1 + value2 + value3);
+            });
+
+            ////////////
+
+
+            $('#ft-w-1').on('input', function () {
+                var weight = parseFloat($('#ft-w-1').val());
+                $('#ft-fr-1').val((((weight / 1000) * 0.005) * 100));
+            });
+            
+            $('#ft-d-1').on('input', function () {
+                var weight = parseFloat($('#ft-w-1').val());
+                var fuleReduction = parseFloat($('#ft-fr-1').val());
+                var totalMiles = parseFloat($('#ft-tm-1').val());
+                var avgMiles = parseFloat($('#avg-mile-per-gellon').val());
+                var fulePrice = parseFloat($('#current-gas-price').val());
+                $('#ft-fc-1').val(totalMiles / (avgMiles * (1 - fuleReduction / weight * 100)) * fulePrice);
+            })
+
+
+            $('#ft-rpm-1').on('click', function () {
+
+                var rate = parseFloat($('#ft-r-1').val());
+                var totalMiles = parseFloat($('#ft-tm-1').val());
+                var fuleCost = parseFloat($('#ft-fc-1').val());
+                $('#ft-tr-1').val((rate)-(fuleCost));
+                var trueRate = parseFloat($('#ft-tr-1').val());
+                 $('#ft-trpm-1').val((trueRate)/(totalMiles));
+                 var days = parseFloat($('#ft-d-1').val());
+                $('#ft-tdr-1').val((trueRate)/(days));
+               
+
+            })
+            
+            $('#ft-rpm-1').on('click', function () {
+                var rate = parseFloat($('#ft-r-1').val());
+                var totalMiles = parseFloat($('#ft-tm-1').val());
+                $('#ft-rpm-1').val((rate)/(totalMiles));
+            })
+
+///working
+   
+
+ // Load 2
+
+ $('#ft-trim-2').on('input', function () {
+    var value1 = parseFloat($('#ft-trim-2').val());
+    $('#ft-tm-2').val(value1);
+});
+
+
+
+$('#ft-dhp-2').on('input', function () {
+    var value1 = parseFloat($('#ft-trim-2').val());
+    value2 = parseFloat($('#ft-dhp-2').val());
+    $('#ft-tm-2').val(value1 + value2);
+});
+
+$('#ft-dhd-2').on('input', function () {
+    var value1 = parseFloat($('#ft-trim-2').val());
+    var value2 = parseFloat($('#ft-dhp-2').val());
+    var value3 = parseFloat($('#ft-dhd-2').val());
+    $('#ft-tm-2').val(value1 + value2 + value3);
+});
+
+////////////
+
+
+$('#ft-w-2').on('input', function () {
+    var weight = parseFloat($('#ft-w-2').val());
+    $('#ft-fr-2').val((((weight / 1000) * 0.005) * 100));
+});
+
+$('#ft-d-2').on('input', function () {
+    var weight = parseFloat($('#ft-w-2').val());
+    var fuleReduction = parseFloat($('#ft-fr-2').val());
+    var totalMiles = parseFloat($('#ft-tm-2').val());
+    var avgMiles = parseFloat($('#avg-mile-per-gellon').val());
+    var fulePrice = parseFloat($('#current-gas-price').val());
+    $('#ft-fc-2').val(totalMiles / (avgMiles * (2 - fuleReduction / weight * 100)) * fulePrice);
+})
+
+
+$('#ft-rpm-2').on('click', function () {
+
+    var rate = parseFloat($('#ft-r-2').val());
+    var totalMiles = parseFloat($('#ft-tm-2').val());
+    var fuleCost = parseFloat($('#ft-fc-2').val());
+    $('#ft-tr-2').val((rate)-(fuleCost));
+    var trueRate = parseFloat($('#ft-tr-2').val());
+     $('#ft-trpm-2').val((trueRate)/(totalMiles));
+     var days = parseFloat($('#ft-d-2').val());
+    $('#ft-tdr-2').val((trueRate)/(days));
+   
+
+})
+
+$('#ft-rpm-2').on('click', function () {
+    var rate = parseFloat($('#ft-r-2').val());
+    var totalMiles = parseFloat($('#ft-tm-2').val());
+    $('#ft-rpm-2').val((rate)/(totalMiles));
+})
+
+
+/////right side
+
+
+
+// Load 1
+
+$('#bh-trim-1').on('input', function () {
+    var value1 = parseFloat($('#bh-trim-1').val());
+    $('#bh-tm-1').val(value1);
+});
+
+
+
+$('#bh-dhp-1').on('input', function () {
+    var value1 = parseFloat($('#bh-trim-1').val());
+    value2 = parseFloat($('#bh-dhp-1').val());
+    $('#bh-tm-1').val(value1 + value2);
+});
+
+$('#bh-dhd-1').on('input', function () {
+    var value1 = parseFloat($('#bh-trim-1').val());
+    var value2 = parseFloat($('#bh-dhp-1').val());
+    var value3 = parseFloat($('#bh-dhd-1').val());
+    $('#bh-tm-1').val(value1 + value2 + value3);
+});
+
+////////////
+
+
+$('#bh-w-1').on('input', function () {
+    var weight = parseFloat($('#bh-w-1').val());
+    $('#bh-fr-1').val((((weight / 1000) * 0.005) * 100));
+});
+
+$('#bh-d-1').on('input', function () {
+    var weight = parseFloat($('#bh-w-1').val());
+    var fuleReduction = parseFloat($('#bh-fr-1').val());
+    var totalMiles = parseFloat($('#bh-tm-1').val());
+    var avgMiles = parseFloat($('#avg-mile-per-gellon').val());
+    var fulePrice = parseFloat($('#current-gas-price').val());
+    $('#bh-fc-1').val(totalMiles / (avgMiles * (1 - fuleReduction / weight * 100)) * fulePrice);
+})
+
+
+$('#bh-rpm-1').on('click', function () {
+
+    var rate = parseFloat($('#bh-r-1').val());
+    var totalMiles = parseFloat($('#bh-tm-1').val());
+    var fuleCost = parseFloat($('#bh-fc-1').val());
+    $('#bh-tr-1').val((rate)-(fuleCost));
+    var trueRate = parseFloat($('#bh-tr-1').val());
+     $('#bh-trpm-1').val((trueRate)/(totalMiles));
+     var days = parseFloat($('#bh-d-1').val());
+    $('#bh-tdr-1').val((trueRate)/(days));
+   
+
+})
+
+$('#bh-rpm-1').on('click', function () {
+    var rate = parseFloat($('#bh-r-1').val());
+    var totalMiles = parseFloat($('#bh-tm-1').val());
+    $('#bh-rpm-1').val((rate)/(totalMiles));
+})
+
+///working
+
+
+// Load 2
+
+$('#bh-trim-2').on('input', function () {
+var value1 = parseFloat($('#bh-trim-2').val());
+$('#bh-tm-2').val(value1);
+});
+
+
+
+$('#bh-dhp-2').on('input', function () {
+var value1 = parseFloat($('#bh-trim-2').val());
+value2 = parseFloat($('#bh-dhp-2').val());
+$('#bh-tm-2').val(value1 + value2);
+});
+
+$('#bh-dhd-2').on('input', function () {
+var value1 = parseFloat($('#bh-trim-2').val());
+var value2 = parseFloat($('#bh-dhp-2').val());
+var value3 = parseFloat($('#bh-dhd-2').val());
+$('#bh-tm-2').val(value1 + value2 + value3);
+});
+
+////////////
+
+
+$('#bh-w-2').on('input', function () {
+var weight = parseFloat($('#bh-w-2').val());
+$('#bh-fr-2').val((((weight / 1000) * 0.005) * 100));
+});
+
+$('#bh-d-2').on('input', function () {
+var weight = parseFloat($('#bh-w-2').val());
+var fuleReduction = parseFloat($('#bh-fr-2').val());
+var totalMiles = parseFloat($('#bh-tm-2').val());
+var avgMiles = parseFloat($('#avg-mile-per-gellon').val());
+var fulePrice = parseFloat($('#current-gas-price').val());
+$('#bh-fc-2').val(totalMiles / (avgMiles * (2 - fuleReduction / weight * 100)) * fulePrice);
+})
+
+
+$('#bh-rpm-2').on('click', function () {
+
+var rate = parseFloat($('#bh-r-2').val());
+var totalMiles = parseFloat($('#bh-tm-2').val());
+var fuleCost = parseFloat($('#bh-fc-2').val());
+$('#bh-tr-2').val((rate)-(fuleCost));
+var trueRate = parseFloat($('#bh-tr-2').val());
+$('#bh-trpm-2').val((trueRate)/(totalMiles));
+var days = parseFloat($('#bh-d-2').val());
+$('#bh-tdr-2').val((trueRate)/(days));
+
+
+})
+
+$('#bh-rpm-2').on('click', function () {
+var rate = parseFloat($('#bh-r-2').val());
+var totalMiles = parseFloat($('#bh-tm-2').val());
+$('#bh-rpm-2').val((rate)/(totalMiles));
+})
+
+
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>
