@@ -9,10 +9,18 @@ body {
     font-size: 16px;
 }
 
+
+
+#avg-mile-per-gellon,#current-gas-price{
+    width: 10%;
+}
+
+
 .container {
     border: 2px solid black;
-    width: 60%;
+    width: 1280px;
     margin: 20px auto;
+    overflow-x: scroll;
 
 }
 
@@ -26,14 +34,19 @@ body {
 }
 
 .title-item label {
-    padding-right: 10px;
+    padding-right: 2px;
     width: 90%;
     float: left;
     clear: left;
     text-align: right;
-
-
 }
+
+
+.title-item{
+
+    padding-right: 8px;
+}
+
 
 .title-item input {
     width: 10%;
@@ -55,6 +68,7 @@ th {
 
 td {
     text-align: center;
+  
 }
 
 
@@ -79,13 +93,14 @@ td {
 
 
 .tables input[type=number] {
-    width: 80%;
+    width: 100%;
     padding: 3px;
 }
 
 .table-bottom input[type=number] {
     padding: 5px;
     margin: 7px;
+    width: 80%;
 
 }
 
@@ -119,3 +134,4 @@ input[type=number]{
 .display-none{
     display: none;
 }
+
