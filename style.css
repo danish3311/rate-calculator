@@ -18,8 +18,9 @@ body {
 
 .container {
     border: 2px solid black;
-    max-width: 1280px;
+    width: 1280px;
     margin: 20px auto;
+    overflow-x: scroll;
 
 }
 
@@ -33,14 +34,19 @@ body {
 }
 
 .title-item label {
-    padding-right: 10px;
+    padding-right: 2px;
     width: 90%;
     float: left;
     clear: left;
     text-align: right;
-
-
 }
+
+
+.title-item{
+
+    padding-right: 8px;
+}
+
 
 .title-item input {
     width: 10%;
