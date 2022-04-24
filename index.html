@@ -440,7 +440,6 @@
 
             $('#ft-d-2').on('input', function () {
                 $('#ft-tdr-2').trigger('click');
-                $('.total1').trigger('click');
             })
 
 
@@ -549,6 +548,7 @@
 
             $('#bh-d-1').on('input', function () {
                 $('#bh-tdr-1').trigger('click');
+                $('.total1').trigger('click');
             })
 
 
@@ -687,22 +687,22 @@
             $('.total1').on('click', function () {
 
                 var max1 = parseFloat($('#ft-trpm-1').val());
-                var max2 = parseFloat($('#ft-trpm-2').val());
-                var average  =max1 + max2 / 2;
+                var max2 = parseFloat($('#bh-trpm-1').val());
+                var average  = max1 + max2 / 2;
                 $('#f-trpm').val((average).toFixed(2));
 
             })
 
             $('.total1').on('click', function () {
                 var max3 = parseFloat($('#ft-tdr-1').val())
-                var max4 = parseFloat($('#ft-tdr-2').val());
+                var max4 = parseFloat($('#bh-tdr-1').val());
                 var average2 = max3 + max4 / 2 ;
                 $('#f-trpd').val((average2).toFixed(2));
             })
 
             $('.total1').on('click', function () {
                 var max5 = parseFloat($('#ft-tr-1').val());
-                var max6 = parseFloat($('#ft-tr-2').val());
+                var max6 = parseFloat($('#bh-tr-1').val());
                 var sum = (max5 + max6);
                 $('#f-ttr').val((sum).toFixed(2));
 
