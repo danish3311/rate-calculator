@@ -12,7 +12,7 @@
         referrerpolicy="no-referrer"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
 
     <title>True Rate Tool Calculator</title>
 
@@ -20,20 +20,21 @@
 
 <body>
     <div class="container">
-        <div class="title-section">
+        < class="title-section">
             <div class="title">Rate Calculator</div>
 
+          
             <div class="title-item">
-                <label for="avg-mile">Enter your average miles per gallon: </label>
+                <label for="avg-mile">  : Enter your average miles per gallon</label>
                 <input type="number" class="bg-color" name="avg-mile" id="avg-mile-per-gellon">
 
             </div>
 
             <div class="title-item">
-                <label for="gas-price">Enter current gas price: $ </label>
+                <label for="gas-price">  : Enter current gas price</label>
                 <input type="number" class="bg-color" name="gas-price" id="current-gas-price">
             </div>
-
+    
         </div>
 
         <div class="tables">
@@ -343,6 +344,8 @@
             ////
             //   working
             ///////
+
+
 
             // Load 2
 
@@ -699,7 +702,7 @@
             $('#f-ttr').on('click', function () {
                 var max5 = Math.max(parseFloat($('#ft-tr-1').val()), parseFloat($('#ft-tr-2').val()));
                 var max6 = Math.max(parseFloat($('#bh-tr-1').val()), parseFloat($('#bh-tr-2').val()));
-                var sum = (max5 + max6);
+                var sum = ((max5 + max6) / 2);
                 $('#f-ttr').val(sum).toFixed(2);
 
             })
