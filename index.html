@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,9 +212,9 @@
         <div class="table-bottom">
             <table>
                 <tr>
-                    <th>Total Rate Per Mile $</th>
-                    <th>Total Rate Per Day $</th>
-                    <th>Total Rate $</th>
+                    <th class="total1">Total Rate Per Mile $</th>
+                    <th class="total1">Total Rate Per Day $</th>
+                    <th class="total1">Total Rate $</th>
                 </tr>
                 <tr>
                     <td><input type="number" class="disable dark-green" readonly name="" id="f-trpm"></td>
@@ -232,9 +231,9 @@
 
             // Load 1
 
-            
 
-        
+
+
             $('#ft-trim-1').on('input', function () {
                 var value1 = parseFloat($('#ft-trim-1').val());
                 $('#ft-tm-1').val((value1).toFixed(0));
@@ -441,6 +440,7 @@
 
             $('#ft-d-2').on('input', function () {
                 $('#ft-tdr-2').trigger('click');
+                $('.total1').trigger('click');
             })
 
 
@@ -667,6 +667,7 @@
                 $('#f-trpm').trigger('click');
                 $('#f-trpd').trigger('click');
                 $('#f-ttr').trigger('click');
+
             })
 
 
@@ -678,6 +679,37 @@
 
 
             ////final
+
+
+            ///////// calculate total 1#
+
+
+            $('.total1').on('click', function () {
+
+                var max1 = parseFloat($('#ft-trpm-1').val());
+                var max2 = parseFloat($('#ft-trpm-2').val());
+                var average  =max1 + max2 / 2;
+                $('#f-trpm').val((average).toFixed(2));
+
+            })
+
+            $('.total1').on('click', function () {
+                var max3 = parseFloat($('#ft-tdr-1').val())
+                var max4 = parseFloat($('#ft-tdr-2').val());
+                var average2 = max3 + max4 / 2 ;
+                $('#f-trpd').val((average2).toFixed(2));
+            })
+
+            $('.total1').on('click', function () {
+                var max5 = parseFloat($('#ft-tr-1').val());
+                var max6 = parseFloat($('#ft-tr-2').val());
+                var sum = (max5 + max6);
+                $('#f-ttr').val((sum).toFixed(2));
+
+            })
+
+
+            ///////// calculate total 2#
 
 
             $('#f-trpm').on('click', function () {
@@ -700,7 +732,7 @@
                 var max5 = Math.max(parseFloat($('#ft-tr-1').val()), parseFloat($('#ft-tr-2').val()));
                 var max6 = Math.max(parseFloat($('#bh-tr-1').val()), parseFloat($('#bh-tr-2').val()));
                 var sum = (max5 + max6);
-                $('#f-ttr').val(sum).toFixed(2);
+                $('#f-ttr').val((sum).toFixed(2));
 
             })
 
