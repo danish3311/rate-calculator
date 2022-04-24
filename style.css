@@ -28,30 +28,29 @@ body {
     margin-bottom: 7px;
 }
 
+#avg-mile-per-gellon,#current-gas-price{
+    width: 10%;
+    float: right;
+    clear: right;
+}
+
+
 .title-item label {
     padding-right: 2px;
-    width: 51%;
+    width: 90%;
+    float: left;
+    clear: left;
     text-align: right;
-    float: left;
-    clear: both;
 }
-
-
-
-#avg-mile-per-gellon,#current-gas-price{
-    width: 18%;
-    float: left;
-    padding: 1px;
-
-}
-
 
 
 .title-item{
- width: 80%;
- margin: auto;
- 
+
+    padding-right: 8px;
 }
+
+
+
 
 
 table {
@@ -146,10 +145,10 @@ input[type=number]{
 }
 
 
-@media only screen and (max-width: 732px) {
+@media only screen and (max-width: 768px) {
     .container {
         border: 1px solid black;
-        width: 732px;
+        width: 600px;
         margin: 20px auto;
         overflow-x: scroll;
     
@@ -165,4 +164,19 @@ input[type=number]{
         padding: 0px;
     
     }
+    .title-item label {
+        padding-right: 2px;
+        width: 51%;
+        text-align: right;
+        float: left;
+        clear: both;
+    }
+    
+    
+    .title-item{
+        width: 80%;
+        margin: auto;
+       }
+       
+    
 }
