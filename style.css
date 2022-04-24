@@ -18,11 +18,7 @@ body {
 
 
 .container {
-<<<<<<< HEAD
     border: 1px solid black;
-=======
-    border: 2px solid black;
->>>>>>> ad3ee7971c4b7c37590a02c4da61b6d70529fba9
     width: 1280px;
     margin: 20px auto;
     overflow-x: scroll;
@@ -127,21 +123,13 @@ input[type=number]{
 
 .disable {
     background-color: #f3f3f3 ;
-<<<<<<< HEAD
-    border: .1px solid black;
-=======
-    border: .5px solid black;
->>>>>>> ad3ee7971c4b7c37590a02c4da61b6d70529fba9
+    border: 1px solid black;
     outline: none;
 }
 
 .bg-color {
     background-color: #ffff88;
-<<<<<<< HEAD
     border: 1px solid black;
-=======
-    
->>>>>>> ad3ee7971c4b7c37590a02c4da61b6d70529fba9
 }
 
 .display-none{
@@ -158,7 +146,3 @@ input[type=number]{
   background-color: #57bb8a;
   
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> ad3ee7971c4b7c37590a02c4da61b6d70529fba9
