@@ -7,6 +7,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
+    font-weight: bold;
 }
 
 
@@ -17,7 +18,7 @@ body {
 
 
 .container {
-    border: 2px solid black;
+    border: 1px solid black;
     width: 1280px;
     margin: 20px auto;
     overflow-x: scroll;
@@ -76,7 +77,7 @@ td {
     margin-top: 5px;
     float: left;
     width: 50%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-left: none;
     
 }
@@ -85,7 +86,7 @@ td {
     margin-top: 5px;
     float: right;
     width: 50%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-right: none;
     border-left: none;
     
@@ -121,17 +122,27 @@ input[type=number]{
 }
 
 .disable {
-    background-color: #e0e0e0;
-    border: .5px solid black;
+    background-color: #f3f3f3 ;
+    border: .1px solid black;
     outline: none;
 }
 
 .bg-color {
-    background-color: #fff201bd;
-    
+    background-color: #ffff88;
+    border: 1px solid black;
 }
 
 .display-none{
     display: none;
 }
 
+.light-green{
+  background-color: #d9ead3;
+  
+}
+
+
+.dark-green{
+  background-color: #57bb8a;
+  
+}
